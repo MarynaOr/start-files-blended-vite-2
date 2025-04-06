@@ -6,6 +6,8 @@ import Todos from './tabs/Todos';
 import Photos from './tabs/Photos';
 
 export const App = () => {
+
+
   return (
     <Section>
       <Container>
