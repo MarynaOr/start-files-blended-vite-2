@@ -1,13 +1,21 @@
 // import Text from '../components/Text/Text';
 // import { useState } from "react";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import FormComponent from '../components/Form/Form';
 import TodoList from '../components/TodoList/TodoList';
 
 const Todos = () => {
   // const [inpValue, setInpValue] = useState('')
-  const [todos, setTodos] = useState([{ id: '', text: '' }]);
+  const [todos, setTodos] = useState(() => {
+    const saveTodo = JSON.parse(localStorage.getItem('todos'))
+    return saveTodo ? saveTodo : []
+  });
+
+  useEffect(()=>{
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
+
 
   const handleAddTodo = newText => {
     if (!newText) {
