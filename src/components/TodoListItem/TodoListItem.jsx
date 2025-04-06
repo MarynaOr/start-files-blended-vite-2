@@ -7,12 +7,13 @@ import { RiDeleteBinLine} from 'react-icons/ri';
 import Text from '../Text/Text';
 import s from './TodoListItem.module.css';
 
-const TodoListItem = ({ todo, index }) => {
+const TodoListItem = ({ todo, index, deleteTodo }) => {
+  
   return (
     <div className={s.box}>
       {/* <Text>{todo.id}</Text> */}
       <Text> {index + 1} {todo.text} </Text>
-      <button className={s.deleteButton}>
+      <button onClick={()=>deleteTodo(todo.id)} className={s.deleteButton}>
         <RiDeleteBinLine size={24} />
       </button>
     </div>

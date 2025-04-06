@@ -9,13 +9,13 @@ import TodoListItem from '../TodoListItem/TodoListItem';
 // Компонент має приймати масив тудушок як пропс.
 // Масив тудушок має наступну структуру.
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, deleteTodo }) => {
   return (
     <div>
       <Grid>
         {todos.map((todo, index) => (
           <GridItem key={todo.id}>
-            <TodoListItem todo={todo} index={index}  />
+            <TodoListItem deleteTodo={deleteTodo} todo={todo} index={index}  />
           </GridItem>
         ))}
       </Grid>

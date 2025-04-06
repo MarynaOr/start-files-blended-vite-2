@@ -2,7 +2,7 @@ import { FiSearch } from 'react-icons/fi';
 import s from './Form.module.css'
 import { Field, Form, Formik} from "formik";
 
-const FormComponent = ({onSubmit, handleAddTodo}) => {
+const FormComponent = ({onSubmit}) => {
 
  const initialValues = {name: ''}
 
