@@ -1,14 +1,22 @@
-//import { RiDeleteBinLine, RiEdit2Line } from 'react-icons/ri';
-
-// Компонент має приймати як пропс об'єкт 
-// однієї тудушки і формувати наступну 
+import { RiDeleteBinLine} from 'react-icons/ri';
+// , RiEdit2Line 
+// Компонент має приймати як пропс об'єкт
+// однієї тудушки і формувати наступну
 // структуру:
 
+import Text from '../Text/Text';
+import s from './TodoListItem.module.css';
 
-
-
-const TodoListItem = () => {
-  return <h3>TodoListItem</h3>;
+const TodoListItem = ({ todo, index }) => {
+  return (
+    <div className={s.box}>
+      {/* <Text>{todo.id}</Text> */}
+      <Text> {index + 1} {todo.text} </Text>
+      <button className={s.deleteButton}>
+        <RiDeleteBinLine size={24} />
+      </button>
+    </div>
+  );
 };
 
 export default TodoListItem;

@@ -6,24 +6,23 @@ import FormComponent from "../components/Form/Form";
 import TodoList from "../components/TodoList/TodoList";
 
 const Todos = () => {
-  const [inpValue, setInpValue] = useState('')
-  const todos = [
-    { id: '1', text: 'Practice more' },
-  { id: '2', text: 'Get all tasks done on time' },
-  ]
+  // const [inpValue, setInpValue] = useState('')
+  const [todos, setTodos] = useState([{id:'', text:''}])
 
+const handleAddTodo = (newText) =>{
+  if(!newText){return}
 
-
-const onSubmit = (value) =>{
-  setInpValue(value)
-console.log(value);
-
+  const addNewTodo = {
+    id: crypto.randomUUID(),
+    text: newText,
+  }
+    setTodos((prev)=>[...prev, addNewTodo])
+  
 }
   return (
     <>
-  <FormComponent onSubmit={onSubmit}/>
+  <FormComponent onSubmit={handleAddTodo}/>
   <TodoList todos={todos} />
-      {/* <Text textAlign="center">There are no any todos ...</Text> */}
     </>
   );
 };

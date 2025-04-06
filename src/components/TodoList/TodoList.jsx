@@ -13,9 +13,9 @@ const TodoList = ({ todos }) => {
   return (
     <div>
       <Grid>
-        {todos.map(todo => (
+        {todos.map((todo, index) => (
           <GridItem key={todo.id}>
-            <TodoListItem todo={todo} />
+            <TodoListItem todo={todo} index={index}  />
           </GridItem>
         ))}
       </Grid>
